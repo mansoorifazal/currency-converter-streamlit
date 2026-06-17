@@ -99,14 +99,13 @@ div[data-testid="stButton"] button[kind="primary"]:hover {
 amount = st.number_input("ENTER AMOUNT", min_value=0.0)
 
 # API Key
-API_KEY = '47d29d6ce02e3b78375da02a'
-
+API_KEY = st.secrets["API_KEY"]
 
 # Sirf currencies ki list lane ke liye
-url = " https://v6.exchangerate-api.com/v6/47d29d6ce02e3b78375da02a/latest/USD"
+url = f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest/USD"
 response = rq.get(url)
-data = response.json()
 
+data = response.json()
 # Currency Codes
 currency_codes = list(data["conversion_rates"].keys())
 
