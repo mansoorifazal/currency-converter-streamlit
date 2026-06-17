@@ -160,7 +160,7 @@ if "from_currency" not in st.session_state:
     st.session_state.from_currency = from_options[0]
 
 if "to_currency" not in st.session_state:
-    st.session_state.to_currency = to_options[1]
+    st.session_state.to_currency = to_options[0]
 
 col1, col2, col3 = st.columns([2, 1, 2])
 
